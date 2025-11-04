@@ -1,13 +1,12 @@
 // ===================== Firebase Config =====================
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT.firebaseapp.com",
-  databaseURL: "https://YOUR_PROJECT.firebaseio.com",
-  projectId: "YOUR_PROJECT",
-  storageBucket: "YOUR_PROJECT.appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID",
-  measurementId: "YOUR_MEASUREMENT_ID"
+  apiKey: "AIzaSyBN7ax3KboqHee5L_0_Xb4weXMXyvVRdf0",
+  authDomain: "loykrathong-ae673.firebaseapp.com",
+  projectId: "loykrathong-ae673",
+  storageBucket: "loykrathong-ae673.firebasestorage.app",
+  messagingSenderId: "251965926615",
+  appId: "1:251965926615:web:59983d11c80b3073929492",
+  measurementId: "G-JK3RWM0XFK"
 }
 
 firebase.initializeApp(firebaseConfig);
@@ -155,6 +154,7 @@ setInterval(() => {
         }
     });
 }, 20000); // 🔁 ทำซ้ำทุก 20 วินาที
+
 
 
 
