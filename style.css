@@ -1,0 +1,180 @@
+/* ===================== Reset ===================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+}
+
+/* ===================== UI Container ===================== */
+.ui-container {
+  flex: 0 0 auto;
+  width: 90%;
+  max-width: 600px;
+  margin: 1vh auto 0 auto;
+  background: rgba(138, 168, 248, 0.3);
+  padding: 0.5vh 1vw;
+  border-radius: 1vw;
+  text-align: center;
+  z-index: 1000;
+}
+
+/* Header */
+.header {
+  font-size: clamp(1rem, 4vw, 1.8rem);
+  color: #fff;
+  text-shadow: 0 0 10px #FFD700, 0 0 20px #FFA500, 0 0 30px #FF4500;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 5px #ff6a00, 0 0 10px #FFA500, 0 0 15px #FF4500; }
+  to { text-shadow: 0 0 15px #ff6200, 0 0 25px #FFA500, 0 0 35px #FF4500; }
+}
+
+/* ===================== Krathong Choices ===================== */
+#krathongChoices img {
+  width: clamp(40px, 12vw, 90px);
+  margin: 0 0.5vw;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 0.5vw;
+  transition: transform 0.2s, border-color 0.2s;
+  animation: glowKrathong 2s ease-in-out infinite alternate;
+}
+
+@keyframes glowKrathong {
+  from { filter: drop-shadow(0 0 5px #FFD700) drop-shadow(0 0 10px #FF8C00); }
+  to { filter: drop-shadow(0 0 15px #FFD700) drop-shadow(0 0 25px #FF8C00); }
+}
+
+#krathongChoices img.selected {
+  border-color: #FFD700;
+  transform: scale(1.1);
+}
+
+/* ===================== Input & Button ===================== */
+#wishInput {
+  width: 60%;
+  max-width: 300px;
+  padding: 0.5vh 1vw;
+  margin: 0.5vh 0;
+  border-radius: 0.5vw;
+  border: none;
+  font-size: clamp(0.7rem, 3vw, 1rem);
+}
+
+#btnFloat {
+  padding: 0.5vh 1vw;
+  border-radius: 0.5vw;
+  margin-left: 1vw;
+  cursor: pointer;
+  font-size: clamp(0.7rem, 3vw, 1rem);
+  background: #FF4500;
+  color: #fff;
+  border: none;
+  transition: background 0.2s;
+}
+
+#btnFloat:hover {
+  background: #FF6347;
+}
+
+/* ===================== Floating Area ===================== */
+#floatingArea {
+  flex: 1 1 auto;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* ===================== Krathong ===================== */
+.krathong {
+  position: absolute;
+  z-index: 5;
+  pointer-events: none;
+  will-change: transform;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+
+.krathong-inner {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  animation: floatY 3s ease-in-out infinite alternate;
+}
+
+@keyframes floatY {
+  from { transform: translateY(0); }
+  to { transform: translateY(-8px); } /* ลดการลอยลงสำหรับมือถือ */
+}
+
+/* ขนาดรูปกระทง */
+.krathong img {
+  width: clamp(105px, 25vw, 250px);
+  height: auto;
+}
+
+/* ข้อความคำอธิษฐาน */
+.wishText {
+  color: white;
+  font-size: clamp(10px, 3vw, 14px);
+  text-shadow: 0 0 4px black;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+/* ===================== Background Video ===================== */
+#bgVideo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* ===================== โลโก้โรงเรียน ===================== */
+.school-logo {
+  width: clamp(30px, 10vw, 60px);
+  height: auto;
+  vertical-align: middle;
+  margin-right: 1vw;
+}
+
+/* ===================== Responsive Adjustments ===================== */
+@media (max-width: 600px) {
+  #krathongChoices img {
+    width: clamp(35px, 18vw, 60px);
+  }
+  #wishInput {
+    width: 70%;
+    font-size: clamp(0.7rem, 4vw, 0.9rem);
+  }
+  #btnFloat {
+    font-size: clamp(0.7rem, 4vw, 0.9rem);
+  }
+  .krathong img {
+    width: clamp(50px, 25vw, 100px);
+  }
+  .wishText {
+    font-size: clamp(10px, 4vw, 12px);
+  }
+}
+
+
+
+
+
